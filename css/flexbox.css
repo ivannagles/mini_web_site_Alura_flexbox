@@ -1,0 +1,170 @@
+.headerPrincipal .container{ /* se aplica a todo el div */
+    display: flex; /* se invoca el modulo unidimensional de layout: caja flexible */
+    align-items: center; /* se alinean items verticalmente en "y" */
+    justify-content: space-between; /* se alinean items horizontalmente en "x" en lados opuestos */
+    flex-direction: row;
+}
+
+.headerPrincipal-nav {
+    display: flex; /* cambia la posición de los items by default: de in-block por inline-block pero usando flexbox */
+}
+
+.headerPrincipal-nav-link{
+    border: 2px solid #9799A6;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    
+}
+
+.headerPrincipal-nav-link:hover {
+    color: #FFF;
+    background-color: #5E9EDC;
+}	
+
+.rodapePrincipal-patrocinadores .container {
+    display: flex;
+    justify-content:space-between; /* envía cada item a un costado. */
+
+}
+
+.rodapePrincipal-patrocinadores-list {
+    display: flex;
+    width: 75%; /* amplia el div para que ocupe ese espacio, así cuando se use el space-around reparta el espacio equitativamente */
+    align-items: center; /* centra en y */
+    justify-content: space-around; /* centra en x equitativo */
+}
+
+.rodapePrincipal-contatoForm-fieldset {
+    display: flex; /* hace que el botón se ajuste y tenga la altura del input */
+}
+
+.subtitulo {
+    display: flex;
+    justify-content: center;
+}
+
+.rodapePrincipal-navMap-list {
+    display: flex; /* alinea cada item uno al lado del otro */
+    flex-direction: column; /* organiza cada item en forma de columna, de arriba hacia abajo */
+    height: 260px; /* se define una altura para que aplique el salto de columna con el flex-wrap */
+    flex-wrap: wrap; /* aplica el salto de columna según la altura definida */   
+}
+
+.contenidoPrincipal-cursos {
+    display: flex; 
+    flex-wrap: wrap; /* para hacer un salto de línea que depende del "width :31%" que se asigne a cada div de los cursos*/ 
+    margin-bottom: 20px; /*para que no queden pegados los cursos con el siguiente div azul del video */ 
+}
+
+.contenidoPrincipal-cursos-link {
+    width: 33.33%; /* ancho asignado a los div por defecto de los cursos. Dependiendo la cifra cabrán más o menos en la fila */
+}
+
+.videoSobre .container {
+    display: flex; /* hace que los elementos de la seccion se alineen uno al lado del otro. */
+    align-items: center;
+    text-align: center;
+}
+
+.videoSobre-video {
+    flex-grow: 0,5;
+}
+
+.videoSobre-sobre-list {
+    flex-grow: 2;
+}
+
+.videoSobre-sobre {
+    margin: auto; /* centra el texto del div perfectamente */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.videoSobre-button {
+    margin: auto;
+    margin-top: 15px;
+
+}
+/* Responsive Code */
+
+@media screen and (max-width: 940px) {
+    .headerPrincipal .container {
+        flex-direction: column; /* alinea el logo y pone debajo los botones uno al lado del otro */
+        text-align: center;/* centra los elementos */
+    }
+
+    .headerPrincipal-nav {
+        flex-direction: column; /* organiza los botones del nv uno debajo del otro de acuerdo al widgth especificado a continuación */
+        width: 100%; /* se define ancho de los botones */
+    }
+
+    .contenidoPrincipal-cursos-link {
+        width:  100%; /* se especifica ancho de los botones de los cursos para que ocupe todo y queden organizados uno debajo del otro */
+    }
+    
+    .videoSobre .container {
+        flex-direction: column; /* organiza el video en una fila y pone debajo la lista de mini alura */
+    }
+
+    .videoSobre-sobre {
+        margin: auto; /* centra el texto de un div de manera perfecta*/
+        margin-top: 20px;
+    }
+
+    .videoSobre-button {
+        margin-top: 15px; /* separo el botón del texto anterior porque estaba muy pegado */
+    }
+    
+    .navmap-list-title-backend {
+        width: 100%; /* se especifica ancho de cada celda de a href */
+        text-align: center; /* se centra texto */
+    }
+    
+    .navmap-list-title-frontend {
+        width: 100%; /* se especifica ancho de cada celda de a href */
+        text-align: center; /* se centra texto */
+    }
+    
+    .navmap-list-title-framework {
+        width: 100%; /* se especifica ancho de cada celda de a href */
+        text-align: center; /* se centra texto */
+    }
+    
+    .navmap-list-title-bancoDeDados {
+        width: 100%; /* se especifica ancho de cada celda de a href */
+        text-align: center; /* se centra texto */
+    }
+
+    .rodapePrincipal .container {
+        width: 50%; /* establece el ancho del div en la seccion, para que el borde izquierdo resaltado no quede tan lejano */ 
+    }
+
+    .rodapePrincipal-navMap-list { /* es la seccion */
+        flex-direction: row; /* establece orden de cada a href según width*/
+        height: 900px; /* es necesario especificar el alto puesto que no alcanza a caber en el espacio por defecto. */
+    }
+
+    .rodapePrincipal-navMap-link { /* es cada fila del curso */
+        width: 100%; /* se especifica que tome todo el espacio */
+        text-align: center; /* centra los elementos */
+    }
+
+    .rodapePrincipal-patrocinadores .container {
+        flex-direction: column; /* organiza los divs uno debajo de otro */
+        align-items: center; /* centra en y */
+        flex-wrap: wrap;
+    }
+
+    .rodapePrincipal-patrocinadores-list-link {
+        padding: 20px; /* ad un espacio entre los logos de los patrocinadores */
+    }
+
+    .headerPrincipal-nav-link-app {
+        order: -1; /* todos los items por defecto tienen order 0, yo e doy este valor para darle prioridad y que me aparezca solo en la version mobile de primeras, de resto n escritorio de últimas. */
+    }
+}
+
+
+   
